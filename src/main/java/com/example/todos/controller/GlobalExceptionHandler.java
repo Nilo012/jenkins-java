@@ -44,7 +44,6 @@ public class GlobalExceptionHandler {
         log.error("operation=unhandledError error={} message={}", ex.getClass().getSimpleName(), ex.getMessage(), ex);
         ErrorResponse body = ErrorResponse.of(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error", "An unexpected error occurred");
-        System.out.println("prueba jenkins");
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 }
